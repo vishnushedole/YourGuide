@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { About } from './Components/About.js';
+import Home from './Home.js';
+import PropTypes from 'prop-types'
+import {
+  Route,
+  Routes
+} from "react-router-dom";
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <>
+    <Home CityName={props.CityName} description={props.description}/>
+    <About/>
+    </>
   );
 }
 
+App.propTypes = {messageBody:PropTypes.string.isRequired,messg2:PropTypes.string,num:PropTypes.number}
+App.defaultProps = {
+   messageBody:"Default message",
+   messg2:"Default messg",
+   num:0
+}
 export default App;
