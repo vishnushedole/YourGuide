@@ -7,7 +7,10 @@ export default class About extends Component{
         this.state={
             Information : "Hi This is a Smart city Application Helps to Get city data.",
             LoggedIn : false,
-            txt : ""
+            txt : "",
+            words:0,
+            heading:"Heading of your article",
+            content:"It should me maximum of 1000 words."
         };
         // this.getInfo = this.getInfo.bind(this);
     }
@@ -31,6 +34,29 @@ export default class About extends Component{
             console.log(err);
         })
     }
+    Change_title=(event)=>{
+        this.setState({
+          heading:event.target.value
+        })
+    }
+    Change_content=(event)=>{
+        
+        let count=0;
+        for(let i=0;i<event.target.value.length;i++)
+        {
+            if(this.state.content[i]==' ')
+            count++;
+        }
+        if(count<=10)
+        {
+            this.setState({
+                content:event.target.value,
+                words:count
+              })
+        }
+           
+    
+    }
     render(){
         
         if(this.state.LoggedIn)
@@ -51,8 +77,16 @@ export default class About extends Component{
             <h1>About Page</h1>
             <p>{this.state.Information}</p>
               <button onClick={this.getInfo}>Click  To Know More</button>
-              <input type="text" name="content" value={this.state.txt} onChange={this.Change_txt}></input>
               <button onClick={this.Savetxt}>Save</button>
+              <div class="publish_article">
+              <p>Share your experiance</p>
+              <div id="title">Heading  <input type="text" value={this.state.heading} onChange={this.Change_title}></input></div>
+              <div id="content">  <textarea class="editor" value={this.state.content} onChange={this.Change_content}></textarea></div>
+              <p>{this.state.words}/1000</p>
+              <input class="post" type="submit" value="POST"></input>
+              </div>
+              
+              
             </>
             )
         }

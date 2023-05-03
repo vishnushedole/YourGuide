@@ -42,7 +42,7 @@ html{
   position: relative;
   left:100px;
   width:330px;
-  height: 340px;
+  height: auto;
   background-color: white;
   border: solid 1px rgb(86, 86, 165);
   border-radius: 5px;
@@ -198,4 +198,39 @@ h3{
 }
 .PageNav input:hover{
   cursor: pointer;
+}
+.publish_article{
+
+  margin :10px;
+  padding:10px;
+  border : solid 2px rgb(239, 166, 64);
+}
+.publish_article #title input{
+  position: relative;
+  left:45px;
+  width:250px;
+  height:25px;
+  border-radius: 5px;
+}
+.publish_article #content textarea{
+  position: relative;
+  left:100px;
+  top:20px;
+  width:800px;
+  height:300px;
+  border-radius: 5px;
+}
+.publish_article  p{
+  position: relative;
+  left: 850px;
+}
+.post{
+  position: relative;
+  left: 750px;
+  width:150px;
+  height:30px;
+  border-radius: 5px ;
+  border:rgb(2, 98, 2);
+  background-color: rgb(48, 151, 48);
+  color:white;
 }

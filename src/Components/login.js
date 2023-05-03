@@ -43,8 +43,6 @@ export class login extends Component {
         <input type="password" name="pass" id="pass" onChange={this.setPass}  />
         </label></div>
         <input type="submit" name="subbtn" id="subbtn" value="Login" onClick={this.login}/>
-
-
     </div>
     </>
   }

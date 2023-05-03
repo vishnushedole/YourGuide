@@ -74,17 +74,16 @@ export default class getNews extends Component{
         {
             this.setState({PageNo : this.state.PageNo + 1})
        }
-       console.log(this.state.PageNo)
+     
     this.setState({articles:this.articles.slice((this.state.PageNo-1)*7 , (this.state.PageNo)*7-1)})
     }
     decrementpage=()=>{
         if(this.state.PageNo > this.state.Min)
         {
-            console.log("hi");
             this.setState({PageNo : this.state.PageNo - 1})
         }
         this.setState({articles:this.articles.slice((this.state.PageNo-1)*7 , (this.state.PageNo)*7-1)})
-    console.log(this.state.PageNo)
+    
     }
     render()
     {
